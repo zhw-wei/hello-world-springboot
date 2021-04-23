@@ -19,8 +19,9 @@ public class JaspytTest {
     public void createMysqlConfig(){
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPassword("hello-world");
+        //不同环境密码保持一致
         String userName = textEncryptor.encrypt("helloworld");
-        String password = textEncryptor.encrypt("helloworld");
+        String password = textEncryptor.encrypt("Helloworld@dmin123");
 
         log.info("userName: {}, password: {}", userName, password);
     }
