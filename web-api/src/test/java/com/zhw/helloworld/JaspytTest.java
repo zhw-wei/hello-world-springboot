@@ -19,8 +19,8 @@ public class JaspytTest {
     public void createMysqlConfig(){
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPassword("hello-world");
-        String userName = textEncryptor.encrypt("userName");
-        String password = textEncryptor.encrypt("password");
+        String userName = textEncryptor.encrypt("helloworld");
+        String password = textEncryptor.encrypt("helloworld");
 
         log.info("userName: {}, password: {}", userName, password);
     }

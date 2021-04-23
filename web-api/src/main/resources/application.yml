@@ -8,8 +8,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/helloworld?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
-    username: helloworld
-    password: helloworld
+    username: ENC(+CmpK/CgqveXvkcc2s5HKNovAH+8vldR)
+    password: ENC(HWeSxM/eRk6LUcf0tqgZ1FcEvoKncWut)
     # 数据库连接池配置，默认数据库连接池 hikari
     hikari:
       # 连接池中允许的最小连接数
@@ -21,7 +21,7 @@ spring:
       # 一个连接idle状态的最大时长（毫秒），超时则被释放（retired）
       idle-timeout: 30000
       # 连接池名称
-      pool-name: HelloWroldHikari
+      pool-name: HelloWorldHikari
       # 一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒
       max-lifetime: 1800000
       # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException
@@ -39,6 +39,8 @@ mybatis:
 jasypt:
   encryptor:
     password: hello-world
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
 logging:
   config: classpath:logback-config.xml
 pagehelper:
