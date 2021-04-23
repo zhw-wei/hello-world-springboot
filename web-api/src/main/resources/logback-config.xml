@@ -5,8 +5,8 @@
     <property name="appName" value="hello-world-springboot"/>
 
     <!-- 日志的存放目录-->
-    <property name="logFileBasePath" value="D:/logs/hello-world-springboot"/>
-    <!--<property name="logFileBasePath" value="~/logs/hello-world-springboot"/>-->
+<!--    <property name="logFileBasePath" value="D:/logs/hello-world-springboot"/>-->
+    <property name="logFileBasePath" value="/Users/zhw/logs/hello-world-springboot"/>
     <property name="DEBUG_LOG_FILE_NAME_PATTERN" value="${logFileBasePath}/${appName}-debug.%d{yyyy-MM-dd}.%i.log"/>
     <property name="INFO_LOG_FILE_NAME_PATTERN" value="${logFileBasePath}/${appName}-info.%d{yyyy-MM-dd}.%i.log"/>
     <property name="WARN_LOG_FILE_NAME_PATTERN" value="${logFileBasePath}/${appName}-warn.%d{yyyy-MM-dd}.%i.log"/>
