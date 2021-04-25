@@ -19,8 +19,7 @@ spring:
       connection-timeout: 30000
       connection-test-query: select 1
   banner:
-    image:
-      location: classpath:static/25.png
+    location: classpath:static/banner.txt
 swagger:
   enabled: true
 mybatis:
