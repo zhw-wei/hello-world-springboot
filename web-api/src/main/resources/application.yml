@@ -18,6 +18,9 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: select 1
+  banner:
+    image:
+      location: classpath:static/25.png
 swagger:
   enabled: true
 mybatis:
