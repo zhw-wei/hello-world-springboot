@@ -4,11 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockReset;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -22,20 +24,16 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @Slf4j
 @SpringBootTest
+@AutoConfigureMockMvc
 public class HelloworldControllerTest {
 
-    @Autowired
-    private WebApplicationContext context;
 
+    @Autowired
     private MockMvc mockMvc;
-    private MockHttpSession session;
 
     @BeforeEach
     public void setUpMockMvc() {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-        //登录
-        this.session = new MockHttpSession();
-        this.session.setAttribute("user", "user");
+
     }
 
     @Test
@@ -47,6 +45,7 @@ public class HelloworldControllerTest {
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("code").value("0"))
                 .andDo(MockMvcResultHandlers.print());
     }
 
@@ -54,10 +53,11 @@ public class HelloworldControllerTest {
     public void world() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/hello-world/world")
-                        .param("id", "abc")
+                        .param("id", "1")
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("code").value("0"))
                 .andDo(MockMvcResultHandlers.print());
     }
 }
