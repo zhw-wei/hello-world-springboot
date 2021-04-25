@@ -1,4 +1,4 @@
-package com.zhw.helloworld.world;
+package com.zhw.helloworld.world.service;
 
 import com.zhw.helloworld.config.Result;
 import com.zhw.helloworld.dal.world.model.World;

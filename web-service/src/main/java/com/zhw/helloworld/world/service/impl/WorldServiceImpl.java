@@ -1,9 +1,9 @@
-package com.zhw.helloworld.world.impl;
+package com.zhw.helloworld.world.service.impl;
 
 import com.zhw.helloworld.config.Result;
 import com.zhw.helloworld.dal.world.dao.WorldMapper;
 import com.zhw.helloworld.dal.world.model.World;
-import com.zhw.helloworld.world.WorldService;
+import com.zhw.helloworld.world.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

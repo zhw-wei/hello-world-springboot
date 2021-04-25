@@ -3,8 +3,8 @@ package com.zhw.helloworld.controller;
 import com.zhw.helloworld.config.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.dal.world.model.World;
-import com.zhw.helloworld.hello.HelloService;
-import com.zhw.helloworld.world.WorldService;
+import com.zhw.helloworld.hello.service.HelloService;
+import com.zhw.helloworld.world.service.WorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,5 +32,10 @@ public class HelloworldController {
     @GetMapping("/world")
     public Result<World> world(@RequestParam Integer id){
         return this.worldService.world(id);
+    }
+
+    @GetMapping("/transaction")
+    public Result<Void> transaction(){
+        return this.helloService.saveTransaction();
     }
 }

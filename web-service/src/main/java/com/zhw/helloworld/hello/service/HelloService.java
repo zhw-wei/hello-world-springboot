@@ -1,4 +1,4 @@
-package com.zhw.helloworld.hello;
+package com.zhw.helloworld.hello.service;
 
 import com.zhw.helloworld.config.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;
@@ -10,4 +10,6 @@ import com.zhw.helloworld.dal.hello.model.Hello;
  */
 public interface HelloService {
     Result<Hello> hello(int id);
+
+    Result<Void> saveTransaction();
 }

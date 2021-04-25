@@ -1,9 +1,9 @@
-package com.zhw.helloworld.hello.impl;
+package com.zhw.helloworld.hello.service.impl;
 
 import com.zhw.helloworld.config.Result;
 import com.zhw.helloworld.dal.hello.dao.HelloMapper;
 import com.zhw.helloworld.dal.hello.model.Hello;
-import com.zhw.helloworld.hello.HelloService;
+import com.zhw.helloworld.hello.service.HelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +33,24 @@ public class HelloServiceImpl implements HelloService {
                     h.setName("hello");
                     return h;
                 }));
+    }
+
+    /**
+     * 测试aop事务是否正常
+     * @return
+     */
+    @Override
+    public Result<Void> saveTransaction() {
+        Hello hello = new Hello();
+        hello.setId(1);
+        hello.setName("hello01");
+        hello.setCode("hello01");
+
+        this.helloMapper.insert(hello);
+
+        int i=0;
+        int j = 10 / i;
+
+        return Result.Success.ADD();
     }
 }
