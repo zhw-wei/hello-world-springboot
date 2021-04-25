@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockReset;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
@@ -40,9 +41,20 @@ public class HelloworldControllerTest {
     @Test
     public void hello() throws Exception {
 
-        int id = 10;
         this.mockMvc.perform(
-                MockMvcRequestBuilders.get("/hello-world/hello?id=" + id)
+                MockMvcRequestBuilders.get("/hello-world/hello")
+                        .param("id", "10")
+                        .accept(MediaType.APPLICATION_JSON)
+        )
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+    }
+
+    @Test
+    public void world() throws Exception {
+        this.mockMvc.perform(
+                MockMvcRequestBuilders.get("/hello-world/world")
+                        .param("id", "abc")
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(MockMvcResultMatchers.status().isOk())
