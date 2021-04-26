@@ -7,7 +7,10 @@ import com.zhw.helloworld.hello.service.HelloService;
 import com.zhw.helloworld.world.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -34,6 +37,7 @@ public class HelloworldServiceTest {
     }
 
     @Test
+    @EnabledOnOs({OS.MAC})
     public void world(){
         int id = 1;
         Result<World> result = this.worldService.world(id);
