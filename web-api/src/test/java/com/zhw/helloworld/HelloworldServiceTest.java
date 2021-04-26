@@ -1,5 +1,8 @@
 package com.zhw.helloworld;
 
+import com.zhw.helloworld.config.CommonConfig;
+import com.zhw.helloworld.config.CommonUtils;
+import com.zhw.helloworld.config.PageResult;
 import com.zhw.helloworld.config.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.dal.world.model.World;
@@ -43,5 +46,12 @@ public class HelloworldServiceTest {
         Result<World> result = this.worldService.world(id);
         Assertions.assertEquals(result.getCode(), 0, "结果状态错误");
         Assertions.assertEquals(result.getData().getId(), id, "结果id错误");
+    }
+
+    @Test
+    public void helloPage(){
+        PageResult<Hello> pageResult = this.helloService.queryPage();
+        log.info("page result: {}", CommonUtils.OBJECT2STRING.apply(pageResult));
+        Assertions.assertEquals(pageResult.getCode(), CommonConfig.SUCCESS_CODE);
     }
 }

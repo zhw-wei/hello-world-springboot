@@ -9,13 +9,13 @@ import lombok.Getter;
  */
 public class Result<T> {
     @Getter
-    private Integer code;
+    private int code;
     @Getter
     private String message;
     @Getter
     private T data;
 
-    private Result(Integer code, String message, T data) {
+    private Result(int code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -40,7 +40,7 @@ public class Result<T> {
         }
 
         static <T> Result<T> SUCCESS(String messsage, T data) {
-            return new Result(0, messsage, data);
+            return new Result(CommonConfig.SUCCESS_CODE, messsage, data);
         }
     }
 
@@ -50,7 +50,7 @@ public class Result<T> {
         }
 
         static <T> Result<T> FAIL(String message, T data) {
-            return new Result(-1, message, data);
+            return new Result(CommonConfig.FAIL_CODE, message, data);
         }
     }
 }
