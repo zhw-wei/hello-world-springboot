@@ -1,6 +1,6 @@
 package com.zhw.helloworld.controller;
 
-import com.zhw.helloworld.config.Result;
+import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.dal.world.model.World;
 import com.zhw.helloworld.hello.service.HelloService;

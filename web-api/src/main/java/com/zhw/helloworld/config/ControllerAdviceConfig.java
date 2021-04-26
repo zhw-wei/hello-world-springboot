@@ -1,5 +1,6 @@
 package com.zhw.helloworld.config;
 
+import com.zhw.helloworld.common.dto.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;

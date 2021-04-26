@@ -2,9 +2,8 @@ package com.zhw.helloworld.hello.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.zhw.helloworld.config.PageResult;
-import com.zhw.helloworld.config.Result;
+import com.zhw.helloworld.common.dto.PageResult;
+import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.hello.dao.HelloMapper;
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.hello.service.HelloService;
@@ -63,9 +62,9 @@ public class HelloServiceImpl implements HelloService {
      */
     @Override
     public PageResult<Hello> queryPage() {
-        Page<Hello> pageInfo = PageHelper.startPage(1, 10)
+        Page<Hello> page = PageHelper.startPage(1, 10)
                 .doSelectPage(() -> this.helloMapper.selectByPrimaryKey(1));
 
-        return PageResult.createResult(pageInfo, pageInfo.getResult());
+        return PageResult.createResult(page.getPageNum(), page.getPageSize(), page.getTotal(), page.getResult());
     }
 }

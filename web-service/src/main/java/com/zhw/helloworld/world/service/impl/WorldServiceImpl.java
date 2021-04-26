@@ -1,6 +1,6 @@
 package com.zhw.helloworld.world.service.impl;
 
-import com.zhw.helloworld.config.Result;
+import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.world.dao.WorldMapper;
 import com.zhw.helloworld.dal.world.model.World;
 import com.zhw.helloworld.world.service.WorldService;

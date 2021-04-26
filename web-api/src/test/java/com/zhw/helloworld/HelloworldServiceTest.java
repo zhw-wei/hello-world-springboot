@@ -1,16 +1,15 @@
 package com.zhw.helloworld;
 
-import com.zhw.helloworld.config.CommonConfig;
-import com.zhw.helloworld.config.CommonUtils;
-import com.zhw.helloworld.config.PageResult;
-import com.zhw.helloworld.config.Result;
+import com.zhw.helloworld.common.config.CommonConfig;
+import com.zhw.helloworld.common.config.CommonUtils;
+import com.zhw.helloworld.common.dto.PageResult;
+import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.dal.world.model.World;
 import com.zhw.helloworld.hello.service.HelloService;
 import com.zhw.helloworld.world.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;

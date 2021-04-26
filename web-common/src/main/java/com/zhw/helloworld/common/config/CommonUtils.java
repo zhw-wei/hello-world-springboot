@@ -1,4 +1,4 @@
-package com.zhw.helloworld.config;
+package com.zhw.helloworld.common.config;
 
 import com.alibaba.fastjson.JSON;
 

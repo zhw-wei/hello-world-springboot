@@ -1,6 +1,6 @@
-package com.zhw.helloworld.config;
+package com.zhw.helloworld.common.dto;
 
-import com.github.pagehelper.Page;
+import com.zhw.helloworld.common.config.CommonConfig;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -22,12 +22,12 @@ public class PageResult<T> {
 
     private PageResult(){}
 
-    public static <T> PageResult<T> createResult(Page page, List<T> resultList){
+    public static <T> PageResult<T> createResult(int pageNo, int pageSize, long total, List<T> resultList){
 
         PageInfo pageInfo = new PageInfo();
-        pageInfo.pageNo = page.getPageNum();
-        pageInfo.pageSize = page.getPageSize();
-        pageInfo.totalCount = page.getTotal();
+        pageInfo.pageNo = pageNo;
+        pageInfo.pageSize = pageSize;
+        pageInfo.totalCount = total;
 
         PageObject<T> pageObject = new PageObject<>();
         pageObject.pageInfo = pageInfo;

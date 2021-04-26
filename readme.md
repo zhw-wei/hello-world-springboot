@@ -5,6 +5,7 @@
 web-api: api接口，项目入口，各种配置
 web-dal: mysql数据库操作入口，xml自动生成
 web-service: 业务代码
+web-common: 公共配置、公共类（多个service时）
 
 #### 项目依赖
 数据库：
