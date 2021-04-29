@@ -21,6 +21,7 @@
     <properties>
         <java.version>11</java.version>
         <mysql.version>8.0.24</mysql.version>
+        <scala.version>2.13.5</scala.version>
     </properties>
 
     <modules>
@@ -34,6 +35,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->

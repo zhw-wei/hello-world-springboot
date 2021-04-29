@@ -27,6 +27,7 @@ public class HelloServiceImpl implements HelloService {
     @Override
     public Result<Hello> hello(int id) {
         Optional<Hello> hello = Optional.ofNullable(this.helloMapper.selectByPrimaryKey(id));
+        log.info("scala {}", com.zhw.helloworld.common.Hello.hello("hello world"));
 
         return Result.Success.QUERY(
                 hello.orElseGet(() -> {

@@ -25,17 +25,17 @@ public class HelloworldController {
     private WorldService worldService;
 
     @GetMapping("/hello")
-    public Result<Hello> hello(@RequestParam Integer id){
+    public Result<Hello> hello(@RequestParam Integer id) {
         return this.helloService.hello(id);
     }
 
     @GetMapping("/world")
-    public Result<World> world(@RequestParam Integer id){
+    public Result<World> world(@RequestParam Integer id) {
         return this.worldService.world(id);
     }
 
     @GetMapping("/transaction")
-    public Result<Void> transaction(){
+    public Result<Void> transaction() {
         return this.helloService.saveTransaction();
     }
 }
