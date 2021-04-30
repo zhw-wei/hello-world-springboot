@@ -1,4 +1,4 @@
-package com.zhw.helloworld
+package com.zhw.helloworld.controller
 
 import com.zhw.helloworld.common.dto.Result
 import com.zhw.helloworld.dal.hello.model.Hello
