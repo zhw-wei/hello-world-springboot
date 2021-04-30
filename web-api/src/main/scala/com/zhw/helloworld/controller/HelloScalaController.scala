@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.{GetMapping, RequestMapping, Requ
  */
 @RestController
 @RequestMapping(Array("/hello-scala"))
-class HelloScalaController @Autowired()(helloService: HelloService){
+class HelloScalaController {
 
+  @Autowired
+  var helloService: HelloService = _
 
   @GetMapping(Array("/hello"))
-  def hello(@RequestParam id: Int): Result[Hello] ={
+  def hello(@RequestParam id: Int): Result[Hello] = {
     helloService.hello(id)
   }
 
