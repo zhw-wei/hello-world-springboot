@@ -82,7 +82,7 @@ public class HelloServiceImpl implements HelloService {
         helloMongo.setCode("hello mongo");
         this.helloRepository.save(helloMongo);
 
-        return Result.Success.QUERY(this.helloRepository.selectById(helloMongo.getId()));
+        return Result.Success.QUERY(this.helloRepository.findByName(helloMongo.getName()).get(0));
     }
 
 }

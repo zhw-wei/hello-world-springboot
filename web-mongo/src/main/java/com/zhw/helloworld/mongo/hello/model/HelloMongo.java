@@ -1,6 +1,7 @@
 package com.zhw.helloworld.mongo.hello.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 /**
  * @author: zhaohw
@@ -9,6 +10,7 @@ import lombok.Data;
  */
 @Data
 public class HelloMongo {
+    @Id
     private String id;
     private String name;
     private String code;
