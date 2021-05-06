@@ -20,6 +20,22 @@ spring:
       connection-test-query: select 1
   banner:
     location: classpath:static/banner.txt
+  redis:
+    host: 127.0.0.1
+    database: 1
+    port: 6379
+    password: xxx
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 10
+        min-idle: 5
+        max-wait: 100
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: hello-world
 swagger:
   enabled: true
 mybatis:

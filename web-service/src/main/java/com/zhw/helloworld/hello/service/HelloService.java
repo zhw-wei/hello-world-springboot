@@ -3,6 +3,7 @@ package com.zhw.helloworld.hello.service;
 import com.zhw.helloworld.common.dto.PageResult;
 import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;
+import com.zhw.helloworld.mongo.hello.model.HelloMongo;
 
 /**
  * @author: zhaohw
@@ -15,4 +16,6 @@ public interface HelloService {
     Result<Void> saveTransaction();
 
     PageResult<Hello> queryPage();
+
+    Result<HelloMongo> testMongo();
 }

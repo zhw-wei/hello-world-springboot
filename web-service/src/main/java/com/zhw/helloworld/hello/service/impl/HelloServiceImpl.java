@@ -7,11 +7,14 @@ import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.hello.dao.HelloMapper;
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.hello.service.HelloService;
+import com.zhw.helloworld.mongo.hello.model.HelloMongo;
+import com.zhw.helloworld.mongo.hello.repository.HelloRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 /**
  * @author: zhaohw
@@ -23,6 +26,8 @@ import java.util.Optional;
 public class HelloServiceImpl implements HelloService {
     @Autowired
     private HelloMapper helloMapper;
+    @Autowired
+    private HelloRepository helloRepository;
 
     @Override
     public Result<Hello> hello(int id) {
@@ -68,4 +73,16 @@ public class HelloServiceImpl implements HelloService {
 
         return PageResult.createResult(page.getPageNum(), page.getPageSize(), page.getTotal(), page.getResult());
     }
+
+    @Override
+    public Result<HelloMongo> testMongo() {
+        HelloMongo helloMongo = new HelloMongo();
+        helloMongo.setId(UUID.randomUUID().toString());
+        helloMongo.setName("hello mongo");
+        helloMongo.setCode("hello mongo");
+        this.helloRepository.save(helloMongo);
+
+        return Result.Success.QUERY(this.helloRepository.selectById(helloMongo.getId()));
+    }
+
 }
