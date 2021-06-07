@@ -1,7 +1,8 @@
-package com.zhw.helloworld;
+package com.zhw.helloworld.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.util.text.BasicTextEncryptor;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -12,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 
 @Slf4j
-@SpringBootTest
 public class JaspytTest {
 
     @Test
+    @Disabled
     public void createMysqlConfig(){
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPassword("hello-world");

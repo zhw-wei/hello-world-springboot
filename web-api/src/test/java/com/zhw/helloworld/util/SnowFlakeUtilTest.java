@@ -1,7 +1,8 @@
-package com.zhw.helloworld;
+package com.zhw.helloworld.util;
 
 import com.zhw.helloworld.common.config.SnowFlakeUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Test;
 public class SnowFlakeUtilTest {
 
     @Test
+    @Disabled
     public void createId(){
 
         Long sid = SnowFlakeUtil.createId();

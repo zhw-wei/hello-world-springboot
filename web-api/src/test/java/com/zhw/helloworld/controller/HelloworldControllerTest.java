@@ -1,7 +1,8 @@
-package com.zhw.helloworld;
+package com.zhw.helloworld.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -25,8 +26,8 @@ import org.springframework.web.context.WebApplicationContext;
 @Slf4j
 @SpringBootTest
 @AutoConfigureMockMvc
+@DisplayName("hello world 接口测试")
 public class HelloworldControllerTest {
-
 
     @Autowired
     private MockMvc mockMvc;
@@ -37,6 +38,7 @@ public class HelloworldControllerTest {
     }
 
     @Test
+    @DisplayName("hello 接口测试")
     public void hello() throws Exception {
 
         this.mockMvc.perform(
@@ -50,6 +52,7 @@ public class HelloworldControllerTest {
     }
 
     @Test
+    @DisplayName("world 接口测试")
     public void world() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/hello-world/world")

@@ -1,4 +1,4 @@
-package com.zhw.helloworld;
+package com.zhw.helloworld.service;
 
 import com.zhw.helloworld.common.config.CommonConfig;
 import com.zhw.helloworld.common.config.CommonUtils;
@@ -10,6 +10,7 @@ import com.zhw.helloworld.hello.service.HelloService;
 import com.zhw.helloworld.world.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
@@ -23,6 +24,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @Slf4j
 @SpringBootTest
+@DisplayName("hello world 功能测试")
 public class HelloworldServiceTest {
 
     @Autowired
@@ -31,6 +33,7 @@ public class HelloworldServiceTest {
     private WorldService worldService;
 
     @Test
+    @DisplayName("hello 功能测试")
     public void hello(){
         int id = 1;
         Result<Hello> result = this.helloService.hello(id);
@@ -40,6 +43,7 @@ public class HelloworldServiceTest {
 
     @Test
     @EnabledOnOs({OS.MAC})
+    @DisplayName("world 功能测试")
     public void world(){
         int id = 1;
         Result<World> result = this.worldService.world(id);
@@ -48,9 +52,9 @@ public class HelloworldServiceTest {
     }
 
     @Test
+    @DisplayName("world 分页功能测试")
     public void helloPage(){
         PageResult<Hello> pageResult = this.helloService.queryPage();
-        log.info("page result: {}", CommonUtils.OBJECT2STRING.apply(pageResult));
         Assertions.assertEquals(pageResult.getCode(), CommonConfig.SUCCESS_CODE);
     }
 }
