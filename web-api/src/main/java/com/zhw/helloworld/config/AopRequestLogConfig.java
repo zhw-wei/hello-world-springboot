@@ -4,6 +4,7 @@ import com.zhw.helloworld.common.config.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -19,6 +20,9 @@ import java.util.stream.Stream;
 @Aspect
 @Component
 public class AopRequestLogConfig {
+
+    @Autowired
+    private RequestStatistics requestStatistics;
 
     /**
      * 设置拦截点
@@ -36,29 +40,33 @@ public class AopRequestLogConfig {
         String params = null;
 
         Object[] args = point.getArgs();
-        if(Objects.nonNull(args)){
+        if (Objects.nonNull(args)) {
             params = Stream.of(args).map(arg -> CommonUtils.OBJECT2STRING.apply(arg))
                     .collect(Collectors.joining(", "));
         }
 
         log.info("请求开始，方法：{}.{}, 请求参数：{} ",
                 point.getTarget().getClass().getName(), point.getSignature().getName(), params);
+
+        this.requestStatistics.statistics(point.getTarget().getClass().getName(),
+                point.getSignature().getName());
     }
 
     /**
      * 后置通知
      */
     @After("controllerAspect()")
-    public void doAfter(JoinPoint point){
+    public void doAfter(JoinPoint point) {
 
     }
 
     /**
      * 返回通知
+     *
      * @param point
      */
     @AfterReturning(value = "controllerAspect()", returning = "response")
-    public void doAfterReturn(JoinPoint point, Object response){
+    public void doAfterReturn(JoinPoint point, Object response) {
 
         log.info("请求结束，方法：{}.{}, 返回参数：{} ",
                 point.getTarget().getClass().getName(), point.getSignature().getName(),
