@@ -21,9 +21,6 @@ import java.util.stream.Stream;
 @Component
 public class AopRequestLogConfig {
 
-    @Autowired
-    private RequestStatistics requestStatistics;
-
     /**
      * 设置拦截点
      */
@@ -48,7 +45,7 @@ public class AopRequestLogConfig {
         log.info("请求开始，方法：{}.{}, 请求参数：{} ",
                 point.getTarget().getClass().getName(), point.getSignature().getName(), params);
 
-        this.requestStatistics.statistics(point.getTarget().getClass().getName(),
+        RequestStatistics.statistics(point.getTarget().getClass().getName(),
                 point.getSignature().getName());
     }
 
