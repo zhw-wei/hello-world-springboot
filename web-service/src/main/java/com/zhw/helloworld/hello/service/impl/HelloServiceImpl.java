@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import java.util.Optional;
 import java.util.UUID;
@@ -30,8 +31,15 @@ public class HelloServiceImpl implements HelloService, ServletContextAware {
     private HelloMapper helloMapper;
     @Autowired
     private HelloRepository helloRepository;
+    @Autowired
+    private HelloDataService helloDataService;
 
     private ServletContext servletContext;
+
+    @PostConstruct
+    public void init(){
+        this.helloDataService.printData();
+    }
 
     @Override
     public Result<Hello> hello(int id) {

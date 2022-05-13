@@ -1,4 +1,4 @@
-package com.zhw.helloworld.processor;
+package com.zhw.helloworld.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -11,12 +11,12 @@ import org.springframework.core.Ordered;
  * @date: 2022.05.13 下午 4:15
  */
 @Slf4j
-public class WorldBeanPostProcessor implements BeanPostProcessor, Ordered {
+public class HelloBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 
-        log.debug("WorldBeanPostProcessor.postProcessBeforeInitialization, bean: {}, beanName{}",
+        log.debug("HelloBeanPostProcessor.postProcessBeforeInitialization, bean: {}, beanName{}",
                 bean, beanName);
 
         return bean;
@@ -25,7 +25,7 @@ public class WorldBeanPostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 
-        log.debug("WorldBeanPostProcessor.postProcessAfterInitialization, bean: {}, beanName{}",
+        log.debug("HelloBeanPostProcessor.postProcessAfterInitialization, bean: {}, beanName{}",
                 bean, beanName);
 
         return bean;
@@ -33,6 +33,6 @@ public class WorldBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public int getOrder() {
-        return 1;
+        return 0;
     }
 }

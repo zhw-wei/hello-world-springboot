@@ -1,5 +1,6 @@
-package com.zhw.helloworld.processor;
+package com.zhw.helloworld.config;
 
+import com.zhw.helloworld.hello.service.impl.HelloFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,5 +21,14 @@ public class Config {
     @Bean
     public WorldBeanPostProcessor worldBeanPostProcessor(){
         return new WorldBeanPostProcessor();
+    }
+
+    //使用factoryBean注册组件
+    @Bean
+    public HelloFactoryBean helloFactoryBean(){
+        HelloFactoryBean factoryBean = new HelloFactoryBean();
+        factoryBean.setName("helloFactoryName");
+        factoryBean.setAge("helloFactoryAge");
+        return factoryBean;
     }
 }
