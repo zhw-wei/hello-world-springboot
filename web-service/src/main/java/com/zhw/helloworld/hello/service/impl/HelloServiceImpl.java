@@ -12,7 +12,9 @@ import com.zhw.helloworld.mongo.hello.repository.HelloRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.ServletContextAware;
 
+import javax.servlet.ServletContext;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -23,11 +25,13 @@ import java.util.UUID;
  */
 @Slf4j
 @Service
-public class HelloServiceImpl implements HelloService {
+public class HelloServiceImpl implements HelloService, ServletContextAware {
     @Autowired
     private HelloMapper helloMapper;
     @Autowired
     private HelloRepository helloRepository;
+
+    private ServletContext servletContext;
 
     @Override
     public Result<Hello> hello(int id) {
@@ -85,4 +89,11 @@ public class HelloServiceImpl implements HelloService {
         return Result.Success.QUERY(this.helloRepository.findByName(helloMongo.getName()).get(0));
     }
 
+    //配置感知器，获取spring容器
+    @Override
+    public void setServletContext(ServletContext servletContext) {
+
+        log.info("servletContext: {}", servletContext);
+        this.servletContext = servletContext;
+    }
 }
