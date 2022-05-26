@@ -1,5 +1,6 @@
 package com.zhw.helloworld.config;
 
+import com.zhw.helloworld.hello.service.HelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -16,8 +17,10 @@ public class HelloBeanPostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 
-        log.debug("HelloBeanPostProcessor.postProcessBeforeInitialization, bean: {}, beanName{}",
-                bean, beanName);
+        if(bean instanceof HelloService) {
+            log.debug("HelloBeanPostProcessor.postProcessBeforeInitialization, bean: {}, beanName{}",
+                    bean, beanName);
+        }
 
         return bean;
     }
@@ -25,8 +28,10 @@ public class HelloBeanPostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 
-        log.debug("HelloBeanPostProcessor.postProcessAfterInitialization, bean: {}, beanName{}",
-                bean, beanName);
+        if(bean instanceof HelloService) {
+            log.debug("HelloBeanPostProcessor.postProcessAfterInitialization, bean: {}, beanName{}",
+                    bean, beanName);
+        }
 
         return bean;
     }
