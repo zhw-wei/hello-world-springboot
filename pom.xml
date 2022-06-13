@@ -26,13 +26,13 @@
     </properties>
 
     <modules>
-        <module>web-api</module>
+        <module>web-controller</module>
         <module>web-service</module>
         <module>web-dal</module>
         <module>web-common</module>
         <module>web-mongo</module>
         <module>dubbo-server</module>
-        <module>dubbo-api</module>
+        <module>dubbo-server-api</module>
     </modules>
 
     <dependencies>

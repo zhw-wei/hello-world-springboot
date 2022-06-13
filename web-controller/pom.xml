@@ -8,10 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.zhw.helloworld.web</groupId>
-    <artifactId>web-api</artifactId>
+    <artifactId>web-controller</artifactId>
 
-    <name>web-api</name>
+    <name>web-controller</name>
 
     <dependencies>
         <dependency>
