@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.zhw.helloworld.service</groupId>
+            <groupId>com.zhw.helloworld</groupId>
             <artifactId>web-service</artifactId>
             <version>${project.version}</version>
         </dependency>

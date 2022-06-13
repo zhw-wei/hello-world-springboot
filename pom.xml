@@ -31,6 +31,8 @@
         <module>web-dal</module>
         <module>web-common</module>
         <module>web-mongo</module>
+        <module>dubbo-server</module>
+        <module>dubbo-api</module>
     </modules>
 
     <dependencies>
