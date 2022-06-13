@@ -60,3 +60,9 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+---
+dubbo:
+  application:
+    name: web-controller
+  registry:
+    address: zookeeper://127.0.0.1:2181

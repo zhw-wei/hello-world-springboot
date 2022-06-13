@@ -1,5 +1,6 @@
 package com.zhw.helloworld;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @EnableAspectJAutoProxy
 @SpringBootApplication
+@EnableDubbo
 public class DubbboServerApplication {
 
     public static void main(String[] args) {

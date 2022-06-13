@@ -11,6 +11,7 @@
     <artifactId>web-controller</artifactId>
 
     <name>web-controller</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -59,12 +60,35 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- shiro配置 -->
-        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-starter -->
+        <!-- spring-boot引入dubbo框架 -->
         <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring-boot-web-starter</artifactId>
-            <version>${shiro.version}</version>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-rpc-dubbo -->
+        <!-- 引入dubbo协议 -->
+        <!-- dubbo是一个rpc框架，支持很多协议，其中一个协议就是dubbo，恰巧名字相同 -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-rpc-dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-registry-zookeeper -->
+        <!-- dubbo注册中心 -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-zookeeper</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zhw.helloworld</groupId>
+            <artifactId>dubbo-server-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
     </dependencies>

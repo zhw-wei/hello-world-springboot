@@ -23,16 +23,17 @@
         <mysql.version>8.0.24</mysql.version>
         <scala.version>2.12.13</scala.version>
         <shiro.version>1.9.0</shiro.version>
+        <dubbo.version>3.0.8</dubbo.version>
     </properties>
 
     <modules>
-        <module>web-controller</module>
-        <module>web-service</module>
-        <module>web-dal</module>
-        <module>web-common</module>
-        <module>web-mongo</module>
-        <module>dubbo-server</module>
         <module>dubbo-server-api</module>
+        <module>web-common</module>
+        <module>web-dal</module>
+        <module>web-mongo</module>
+        <module>web-service</module>
+        <module>dubbo-server</module>
+        <module>web-controller</module>
     </modules>
 
     <dependencies>

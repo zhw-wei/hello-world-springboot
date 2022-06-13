@@ -9,8 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-
     <artifactId>dubbo-server-api</artifactId>
-
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.jasig.service</groupId>
+            <artifactId>uportal-shibboleth-delegation-integration</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

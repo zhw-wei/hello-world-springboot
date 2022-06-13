@@ -2,3 +2,12 @@ server:
   port: 8081
   servlet:
     context-path: /dubbo-server
+---
+dubbo:
+  application:
+    name: dubbo-server
+  protocol:
+    name: dubbo
+    port: 20080
+  registry:
+    address: zookeeper://127.0.0.1:2181
