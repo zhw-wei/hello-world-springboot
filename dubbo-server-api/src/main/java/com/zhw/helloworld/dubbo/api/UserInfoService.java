@@ -1,5 +1,8 @@
 package com.zhw.helloworld.dubbo.api;
 
+import com.zhw.helloworld.dubbo.dto.UserInfoRequest;
+import com.zhw.helloworld.dubbo.dto.UserInfoResponse;
+
 /**
  * @author: zhaohw
  * @date: 2022.06.13 下午 1:53
@@ -10,4 +13,6 @@ public interface UserInfoService {
     String version1 = "v2.0";
 
     String getUserInfo();
+
+    UserInfoResponse getUserInfo(UserInfoRequest request);
 }

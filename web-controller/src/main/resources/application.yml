@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8085
   servlet:
     context-path: /hello-world
 spring:
@@ -65,4 +65,5 @@ dubbo:
   application:
     name: web-controller
   registry:
-    address: zookeeper://127.0.0.1:2181
+     address: zookeeper://127.0.0.1:2181
+#    address: zookeeper://192.168.88.129:2181
