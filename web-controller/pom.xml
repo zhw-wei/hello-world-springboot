@@ -73,7 +73,8 @@
         <!-- dubbo是一个rpc框架，支持很多协议，其中一个协议就是dubbo，恰巧名字相同 -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-rpc-dubbo</artifactId>
+<!--            <artifactId>dubbo-rpc-dubbo</artifactId>-->
+            <artifactId>dubbo-rpc-triple</artifactId>
             <version>${dubbo.version}</version>
         </dependency>
 
