@@ -42,4 +42,4 @@ java -jar xxx.jar --spring.config.location=/path/to/application.yml --server.por
     * 配置文件中也可以有server.port
     * 命令行中的配置参数优先级高于配置文件
     * application.yml是本地配置，server.port可以直接配置在yml文件中，无需命令行中指定
-    * server.port是yml中配置的一个举例
+    * server.port是yml中配置的一个举例 
