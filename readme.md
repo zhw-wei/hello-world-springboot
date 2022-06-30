@@ -39,7 +39,7 @@ java -jar xxx.jar --spring.config.location=/path/to/application.yml --server.por
 ```
 1. spring.config.location: 指定配置文件地址，覆盖jar包中的配置文件
 2. server.port: 指定端口号，命令行指定的配置内容优先级高于配置文件中的内容
-    * 配置文件中也可以有server.port
+    * 配置文件中也可以有server.port 
     * 命令行中的配置参数优先级高于配置文件
     * application.yml是本地配置，server.port可以直接配置在yml文件中，无需命令行中指定
     * server.port是yml中配置的一个举例 
