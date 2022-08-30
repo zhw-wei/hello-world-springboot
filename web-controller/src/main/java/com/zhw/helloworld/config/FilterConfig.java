@@ -19,8 +19,8 @@ public class FilterConfig {
      */
     @Bean
     @Order(Integer.MIN_VALUE + 1)
-    public FilterRegistrationBean refererFilterRegistration() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
+    public FilterRegistrationBean<RefererFilter> refererFilterRegistration() {
+        FilterRegistrationBean<RefererFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(new RefererFilter());
         registration.addUrlPatterns("/*");
         registration.setName("refererFilter");
@@ -32,8 +32,8 @@ public class FilterConfig {
      */
     @Bean
     @Order(Integer.MIN_VALUE + 2)
-    public FilterRegistrationBean xssFilterRegistration() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
+    public FilterRegistrationBean<XssFilter> xssFilterRegistration() {
+        FilterRegistrationBean<XssFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(new XssFilter());
         registration.addUrlPatterns("/*");
         registration.addInitParameter("enabled", "true");
