@@ -25,7 +25,7 @@ public class WorldServiceImpl implements WorldService {
     public Result<World> world(int id) {
         Optional<World> world = Optional.ofNullable(this.worldMapper.selectByPrimaryKey(id));
 
-        return Result.Success.QUERY(
+        return Result.Success.query(
                 world.orElseGet(() -> {
                     World w = new World();
                     w.setId(-1);

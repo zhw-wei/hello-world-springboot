@@ -46,7 +46,7 @@ public class HelloServiceImpl implements HelloService, ServletContextAware {
         Optional<Hello> hello = Optional.ofNullable(this.helloMapper.selectByPrimaryKey(id));
         log.info("scala {}", com.zhw.helloworld.common.Hello.hello("hello world"));
 
-        return Result.Success.QUERY(
+        return Result.Success.query(
                 hello.orElseGet(() -> {
                     Hello h = new Hello();
                     h.setId(-1);
@@ -72,7 +72,7 @@ public class HelloServiceImpl implements HelloService, ServletContextAware {
         int i=0;
         int j = 10 / i;
 
-        return Result.Success.ADD();
+        return Result.Success.add();
     }
 
     /**
@@ -94,7 +94,7 @@ public class HelloServiceImpl implements HelloService, ServletContextAware {
         helloMongo.setCode("hello mongo");
         this.helloRepository.save(helloMongo);
 
-        return Result.Success.QUERY(this.helloRepository.findByName(helloMongo.getName()).get(0));
+        return Result.Success.query(this.helloRepository.findByName(helloMongo.getName()).get(0));
     }
 
     //配置感知器，获取spring容器
