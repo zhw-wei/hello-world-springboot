@@ -24,6 +24,7 @@
         <scala.version>2.12.13</scala.version>
         <shiro.version>1.9.0</shiro.version>
         <dubbo.version>3.0.8</dubbo.version>
+        <fastjson.version>2.0.12</fastjson.version>
     </properties>
 
     <modules>
@@ -51,9 +52,9 @@
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.76</version>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>${fastjson.version}</version>
         </dependency>
 
         <dependency>

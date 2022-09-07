@@ -19,23 +19,23 @@ import java.util.stream.Collectors;
 public class ControllerAdviceConfig {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Result bindException(MethodArgumentNotValidException ex) {
+    public <T> Result<T> bindException(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
 
-        StringBuilder errorMesssage = new StringBuilder("参数校验失败: ");
-        errorMesssage.append(
+        StringBuilder msg = new StringBuilder("参数校验失败: ");
+        msg.append(
                 bindingResult.getFieldErrors().stream()
                         .map(error -> String.format("%s : %s", error.getField(), error.getDefaultMessage()))
                         .collect(Collectors.joining(",")));
 
-        log.error("{}", errorMesssage);
+        log.error("{}", msg);
 
-        return Result.Fail.FAIL(errorMesssage.toString());
+        return Result.Fail.fail(msg.toString());
     }
 
     @ExceptionHandler(Exception.class)
     public <T> Result<T> exception(Exception ex) {
-        log.error("{}", ex);
-        return Result.Fail.FAIL(ex.getMessage());
+        log.error("ex: {}", ex);
+        return Result.Fail.fail(ex.getMessage());
     }
 }
