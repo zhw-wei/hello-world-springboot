@@ -2,10 +2,11 @@ package com.zhw.helloworld.dal.hello.dao;
 
 import com.zhw.helloworld.dal.hello.model.Hello;
 import com.zhw.helloworld.dal.hello.model.HelloCriteria;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface HelloMapper {

@@ -1,7 +1,6 @@
 package com.zhw.helloworld.service;
 
 import com.zhw.helloworld.common.config.CommonConfig;
-import com.zhw.helloworld.common.config.CommonUtils;
 import com.zhw.helloworld.common.dto.PageResult;
 import com.zhw.helloworld.common.dto.Result;
 import com.zhw.helloworld.dal.hello.model.Hello;

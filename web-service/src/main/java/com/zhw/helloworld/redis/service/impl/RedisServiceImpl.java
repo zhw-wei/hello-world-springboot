@@ -1,7 +1,6 @@
 package com.zhw.helloworld.redis.service.impl;
 
-import com.alibaba.fastjson.JSON;
-import com.zhw.helloworld.common.config.CommonUtils;
+import com.alibaba.fastjson2.JSON;
 import com.zhw.helloworld.redis.key.RedisKeyTemplate;
 import com.zhw.helloworld.redis.service.RedisService;
 import lombok.extern.slf4j.Slf4j;
