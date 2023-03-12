@@ -30,12 +30,12 @@ public class ControllerAdviceConfig {
 
         log.error("{}", errorMesssage);
 
-        return Result.Fail.FAIL(errorMesssage.toString());
+        return Result.Fail.fail(errorMesssage.toString());
     }
 
     @ExceptionHandler(Exception.class)
     public <T> Result<T> exception(Exception ex) {
         log.error("{}", ex);
-        return Result.Fail.FAIL(ex.getMessage());
+        return Result.Fail.fail(ex.getMessage());
     }
 }

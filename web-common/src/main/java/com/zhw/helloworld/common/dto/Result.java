@@ -50,11 +50,11 @@ public class Result<T> {
     }
 
     public static class Fail {
-        static <T> Result<T> fail(String message) {
+        public static <T> Result<T> fail(String message) {
             return fail(message, null);
         }
 
-        static <T> Result<T> fail(String message, T data) {
+        public static <T> Result<T> fail(String message, T data) {
             return new Result<>(CommonConfig.FAIL_CODE, message, data);
         }
     }

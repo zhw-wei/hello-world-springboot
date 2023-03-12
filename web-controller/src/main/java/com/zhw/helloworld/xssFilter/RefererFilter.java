@@ -26,6 +26,14 @@ public class RefererFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         // 链接来源地址
         String referer = req.getHeader("referer");
+
+        log.debug("referer: {}", referer);
+        log.debug("serverName: {}", req.getServerName());
+
+        //测试时使用，不再处理跨域问题
+        boolean test = true;
+        referer = null;
+
         if (referer != null && !referer.contains(req.getServerName())) {
             // 如果 链接地址来自其他网站,不让继续访问
             log.warn("==========>> 跨站点请求，请求失败\t {}", referer);
