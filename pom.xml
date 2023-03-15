@@ -35,6 +35,7 @@
         <module>web-service</module>
         <module>dubbo-server</module>
         <module>web-controller</module>
+        <module>web-controller-vue</module>
     </modules>
 
     <dependencies>
